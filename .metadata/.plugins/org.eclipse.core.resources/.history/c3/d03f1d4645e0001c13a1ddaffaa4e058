@@ -1,0 +1,37 @@
+package Auth_Flows;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Active_Customer_Access_flow {
+
+	public static WebDriver driver = null;
+
+	@Test
+	public void Active_Customer_Access_Launch() {
+
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get("https://e-tst2.stage.att.com/mydatarequest/");
+		driver.manage().window().maximize();
+
+		//driver.getWindowHandles();
+		//WebElement frame1 = driver.findElement(By.xpath("html/head/iframe"));
+		//driver.switchTo().frame(frame1);
+		driver.findElement(By.xpath("//*[@class='selectWrap error']")).click();
+		driver.close();
+
+	}
+
+}
