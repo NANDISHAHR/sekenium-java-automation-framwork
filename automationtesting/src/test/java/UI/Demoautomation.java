@@ -17,6 +17,8 @@ public class Demoautomation {
 		driver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
 		//driver.close();
 		driver.quit();
+		//close all application 
+		//which is opened
 		
 
 	}
